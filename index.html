@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#1e1e1e">
+  <title>R3T00YT - Ciberseguridad</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .notificacion {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #00ffff;
+      color: #000;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      display: none;
+      font-weight: bold;
+      animation: fadeInOut 4s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(-10px); }
+      10% { opacity: 1; transform: translateY(0); }
+      90% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="notificacion" id="notificacion">Gracias. Correo enviado.</div>
+
+  <header>
+    <nav>
+      <div class="logo">R3T00YT</div>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h1>Bienvenido a R3T00YT</h1>
+    <p>Red Team | Seguridad ofensiva profesional</p>
+    <button onclick="scrollToSection('servicios')">Ver Servicios</button>
+  </section>
+
+  <section id="historia">
+    <h2>Nuestra Historia</h2>
+    <p>R3T00YT es una nueva empresa de ciberseguridad especializada en Red Team. Ingresamos al mercado con una visión clara: ofrecer servicios de seguridad ofensiva de alta calidad para proteger a empresas de todo tamaño contra las amenazas digitales modernas. Nos impulsa la pasión por la ciberseguridad y el compromiso con nuestros clientes.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="servicios-grid">
+      <div class="servicio">
+        <h3>Test de Penetración</h3>
+        <p>Identificamos vulnerabilidades antes que los atacantes lo hagan.</p>
+      </div>
+      <div class="servicio">
+        <h3>Auditoría de Seguridad</h3>
+        <p>Análisis detallado de tu infraestructura tecnológica.</p>
+      </div>
+      <div class="servicio">
+        <h3>Simulaciones Red Team</h3>
+        <p>Simulamos ataques reales para fortalecer tus defensas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form class="formulario-contacto" action="https://formsubmit.co/ajax/r3kt00yt8080@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <p class="correo-directo">También puedes escribirnos a: <a href="mailto:r3kt00yt8080@gmail.com">r3kt00yt8080@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 R3T00YT. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const formulario = document.querySelector(".formulario-contacto");
+    const notificacion = document.getElementById("notificacion");
+
+    formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(formulario);
+
+      fetch(formulario.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
+        .then(response => {
+          if (response.ok) {
+            notificacion.style.display = "block";
+            formulario.reset();
+            setTimeout(() => {
+              notificacion.style.display = "none";
+            }, 4000);
+          } else {
+            alert("Error al enviar el mensaje. Intenta de nuevo.");
+          }
+        })
+        .catch(() => {
+          alert("Error al conectar con el servidor.");
+        });
+    });
+  </script>
+</body>
+</html>
