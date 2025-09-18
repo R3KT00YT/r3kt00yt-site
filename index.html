@@ -3,131 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="theme-color" content="#1e1e1e">
-  <title>R3T00YT - Ciberseguridad</title>
+  <title>R3KT00YT - Ciberseguridad & Software</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .notificacion {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #00ffff;
-      color: #000;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      display: none;
-      font-weight: bold;
-      animation: fadeInOut 4s ease-in-out;
-    }
-
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: translateY(-10px); }
-      10% { opacity: 1; transform: translateY(0); }
-      90% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-10px); }
-    }
-  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="notificacion" id="notificacion">Gracias. Correo enviado.</div>
-
+  <!-- Header -->
   <header>
+    <div class="logo">R3KT00YT</div>
     <nav>
-      <div class="logo">R3T00YT</div>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#historia">Historia</a></li>
         <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section id="inicio" class="hero">
-    <h1>Bienvenido a R3T00YT</h1>
-    <p>Red Team | Seguridad ofensiva profesional</p>
-    <button onclick="scrollToSection('servicios')">Ver Servicios</button>
+    <div class="hero-content">
+      <h1>Protegemos tu mundo digital</h1>
+      <p>Soluciones en ciberseguridad y desarrollo de software confiables.</p>
+      <a href="#contacto" class="btn">Contáctanos</a>
+    </div>
   </section>
 
-  <section id="historia">
-    <h2>Nuestra Historia</h2>
-    <p>R3T00YT es una nueva empresa de ciberseguridad especializada en Red Team. Ingresamos al mercado con una visión clara: ofrecer servicios de seguridad ofensiva de alta calidad para proteger a empresas de todo tamaño contra las amenazas digitales modernas. Nos impulsa la pasión por la ciberseguridad y el compromiso con nuestros clientes.</p>
-  </section>
-
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <div class="servicios-grid">
-      <div class="servicio">
-        <h3>Test de Penetración</h3>
-        <p>Identificamos vulnerabilidades antes que los atacantes lo hagan.</p>
+  <!-- Servicios -->
+  <section id="servicios" class="services">
+    <h2>Nuestros Servicios</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Ciberseguridad</h3>
+        <p>Protección contra amenazas digitales.</p>
       </div>
-      <div class="servicio">
-        <h3>Auditoría de Seguridad</h3>
-        <p>Análisis detallado de tu infraestructura tecnológica.</p>
+      <div class="card">
+        <h3>Desarrollo de Software</h3>
+        <p>Aplicaciones web , seguras y a medida.</p>
       </div>
-      <div class="servicio">
-        <h3>Simulaciones Red Team</h3>
-        <p>Simulamos ataques reales para fortalecer tus defensas.</p>
+      <div class="card">
+        <h3>Análisis de Redes</h3>
+        <p>Monitoreo y auditorías para asegurar tu infraestructura.</p>
+      </div>
+      <div class="card">
+        <h3>Consultoría</h3>
+        <p>Asesoría tecnológica para escuelas y organizaciones.</p>
       </div>
     </div>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form class="formulario-contacto" action="https://formsubmit.co/ajax/r3kt00yt8080@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
+<!-- Proyectos -->
+<section id="proyectos" class="projects">
+  <h2>Proyectos Recientes</h2>
+  <div class="project-gallery">
 
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required>
+    <!-- Proyecto 1 -->
+    <div class="project">
+      <h3>Escáner de vulnerabilidades web</h3>
+      <p>Herramienta educativa de auditoría web impulsada con IA.</p>
+      <a href="https://github.com/R3KT00YT/Scanner-de-vulnerabilidades-web" target="_blank" class="btn">Ver en GitHub</a>
+    </div>
 
-      <label for="email">Correo Electrónico</label>
-      <input type="email" id="email" name="email" required>
+<!-- Proyecto 2 -->
+<div class="project">
+  <h3>Escáner de Cámaras Web y Dispositivos</h3>
+  <p>
+    Herramienta en Python diseñada para analizar cámaras web, direcciones IP y equipos conectados en la red.
+    Realiza detección de vulnerabilidades comunes, verifica configuraciones inseguras y genera reportes de auditoría.
+  </p>
+  <a href="https://github.com/R3KT00YT/ScanCam.git" target="_blank" class="btn">
+    Ver en GitHub
+  </a>
+</div>
 
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+    <!-- Proyecto 3 -->
+    <div class="project">
+      <h3>Administrador de Contraseñas - Generador y Gestor Básico</h3>
+      <p>Un proyecto sencillo pero útil para gestionar contraseñas de forma segura
+        Genera claves aleatorias, las cifras localmente y permite consultarlas cuando sea necesario.
+      </p>
+      <a href="https://github.com/R3KT00YT/Contrasenas.git" target="_blank" class="btn">Ver en GitHub</a>
+    </div>
 
-      <button type="submit">Enviar</button>
-    </form>
-    <p class="correo-directo">También puedes escribirnos a: <a href="mailto:r3kt00yt8080@gmail.com">r3kt00yt8080@gmail.com</a></p>
+  </div>
+</section>
+
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="about">
+    <h2>Sobre Nosotros</h2>
+    <p>En <strong>R3KT00YT</strong> somos un equipo de especialistas en ciberseguridad y desarrollo de software. Nuestro compromiso es brindar soluciones tecnológicas seguras, innovadoras y confiables.</p>
   </section>
 
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p>¿Listo para asegurar tu mundo digital? Escríbenos:</p>
+    <a href="mailto:r3kt00yt8080@gmail.com" class="btn">Enviar correo</a>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 R3T00YT. Todos los derechos reservados.</p>
+    <p>© 2025 R3KT00YT · Todos los derechos reservados</p>
+    <div class="socials">
+      <a href="https://www.youtube.com/@r3kt00yt">YouTube</a>
+      <a href="https://github.com/R3KT00YT">GitHub</a>
+      <a href="https://x.com/r3kt00yt?t=zJRCkZlbrLvsBdTI9HQbCA&s=09">X</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    const formulario = document.querySelector(".formulario-contacto");
-    const notificacion = document.getElementById("notificacion");
-
-    formulario.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(formulario);
-
-      fetch(formulario.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      })
-        .then(response => {
-          if (response.ok) {
-            notificacion.style.display = "block";
-            formulario.reset();
-            setTimeout(() => {
-              notificacion.style.display = "none";
-            }, 4000);
-          } else {
-            alert("Error al enviar el mensaje. Intenta de nuevo.");
-          }
-        })
-        .catch(() => {
-          alert("Error al conectar con el servidor.");
-        });
-    });
-  </script>
 </body>
 </html>
